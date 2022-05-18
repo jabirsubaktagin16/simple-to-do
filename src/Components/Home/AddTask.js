@@ -1,11 +1,13 @@
 import React from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
 import toast from "react-hot-toast";
+import { useNavigate } from "react-router-dom";
 import auth from "../../firebase.init";
 import Loading from "../Loading";
 
 const AddTask = () => {
   const [user, error, loading] = useAuthState(auth);
+  const navigate = useNavigate();
   const addNewTask = (event) => {
     event.preventDefault();
     const task = {
@@ -24,6 +26,7 @@ const AddTask = () => {
       .then((res) => res.json())
       .then((data) => {
         toast.success("Task Added Successfully");
+        navigate("/");
       });
   };
 
@@ -61,7 +64,7 @@ const AddTask = () => {
             </div>
 
             <input
-              className="btn w-full max-w-xs"
+              className="btn w-full max-w-xs mt-6"
               value="Add Task"
               type="submit"
             />
