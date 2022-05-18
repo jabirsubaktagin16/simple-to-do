@@ -3,12 +3,12 @@ import SingleTask from "./SingleTask";
 
 const TaskList = () => {
   return (
-    <div className="overflow-x-auto">
+    <div className="overflow-x-auto my-8">
       <table className="table w-full">
         <thead>
           <tr>
-            <th>Name</th>
-            <th>Job</th>
+            <th>Task Name</th>
+            <th>Action</th>
           </tr>
         </thead>
         <tbody>
