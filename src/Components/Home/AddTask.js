@@ -16,7 +16,7 @@ const AddTask = () => {
       email: user?.email,
       taskCompleted: false,
     };
-    fetch("http://localhost:5000/tasks", {
+    fetch("https://safe-island-34468.herokuapp.com/tasks", {
       method: "POST",
       headers: {
         "content-type": "application/json",
