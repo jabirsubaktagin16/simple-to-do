@@ -1,4 +1,6 @@
 import React from "react";
+import { FaCheck } from "react-icons/fa";
+import { MdDeleteOutline } from "react-icons/md";
 import useTaskDetails from "./../../hooks/useTaskDetails";
 
 const SingleTask = ({ task, handleDelete }) => {
@@ -39,38 +41,21 @@ const SingleTask = ({ task, handleDelete }) => {
         <div className="card-actions justify-end">
           <button
             onClick={() => handleComplete(task._id)}
-            className="btn btn-primary"
+            className="btn btn-primary gap-2"
           >
+            <FaCheck />
             Complete
           </button>
           <button
             onClick={() => handleDelete(task._id)}
-            className="btn btn-error"
+            className="btn btn-error gap-2"
           >
+            <MdDeleteOutline />
             Delete
           </button>
         </div>
       </div>
     </div>
-    // <tr className="text-center">
-    //   <td>
-    //     {taskCheck.taskCompleted ? <s>{task.taskName}</s> : task.taskName}
-    //   </td>
-    //   <td className="flex flex-col gap-2">
-    //     <button
-    //       onClick={() => handleComplete(task._id)}
-    //       className="btn btn-sm btn-success"
-    //     >
-    //       Complete
-    //     </button>
-    //     <button
-    //       onClick={() => handleDelete(task._id)}
-    //       className="btn btn-sm btn-error"
-    //     >
-    //       Delete
-    //     </button>
-    //   </td>
-    // </tr>
   );
 };
 

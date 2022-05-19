@@ -1,6 +1,7 @@
 import { signOut } from "firebase/auth";
 import React, { useEffect, useState } from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
+import { SiAddthis } from "react-icons/si";
 import { Link, useNavigate } from "react-router-dom";
 import auth from "./../../firebase.init";
 import SingleTask from "./SingleTask";
@@ -55,8 +56,9 @@ const TaskList = () => {
             <div className="card-actions justify-end">
               <Link
                 to="/addTask"
-                className="btn bg-green-500 border-0 hover:bg-green-300"
+                className="btn gap-2 bg-green-500 border-0 hover:bg-green-400"
               >
+                <SiAddthis style={{ color: "white" }} />
                 Add New Task
               </Link>
               <button onClick={handleSignOut} className="btn btn-ghost">
@@ -66,26 +68,6 @@ const TaskList = () => {
           </div>
         </div>
       </div>
-
-      {/* <div className="overflow-x-auto my-8">
-        <table className="table w-full">
-          <thead>
-            <tr className="text-center">
-              <th>Task Name</th>
-              <th>Action</th>
-            </tr>
-          </thead>
-          <tbody>
-            {myTasks.map((task) => (
-              <SingleTask
-                task={task}
-                key={task._id}
-                handleDelete={handleDelete}
-              />
-            ))}
-          </tbody>
-        </table>
-      </div> */}
     </>
   );
 };
